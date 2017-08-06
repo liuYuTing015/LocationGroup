@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     String mBroker = "";
     String mAccessKey = "";
     String mSecretKey = "";
-    String mTopic = "tracks_staging";
+    String mTopic = "tracks";
     String mProducerClientId = "GID_tracks_staging";
 
     private static String[] mPermissions = {
@@ -70,11 +70,11 @@ public class MainActivity extends AppCompatActivity {
     public void startLocation() {
         mLocationUtils = new LocationUtils.LocationUtilsBuilder(mImei, this)
 //                可选参数
-//                .withBroker(mBroker)
-//                .withAccessKey(mAccessKey)
-//                .withSecretKey(mSecretKey)
-//                .withVender(mVender)
-//                .withTopic(mTopic)
+                .withBroker(mBroker)
+                .withAccessKey(mAccessKey)
+                .withSecretKey(mSecretKey)
+                .withVender(mVender)
+                .withTopic(mTopic)
                 .withProducerClientId(mProducerClientId + "@@@" + mImei)
                 .build();
 
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if (mLocationUtils != null) {
-            // mLocationUtils.startLocationService();
+             mLocationUtils.startLocationService();
         }
     }
 

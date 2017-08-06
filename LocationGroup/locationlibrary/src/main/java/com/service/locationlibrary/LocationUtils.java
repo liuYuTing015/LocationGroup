@@ -40,7 +40,7 @@ public class LocationUtils {
     private final String mSecretKey;
     private final String mTopic;
     private final String mProducerClientId;
-
+    private MqttSend mqttSend;
 
     public LocationUtils(LocationUtilsBuilder builder) {
         this.mImei = builder.imei;
@@ -51,6 +51,7 @@ public class LocationUtils {
         this.mSecretKey = builder.secretKey;
         this.mTopic = builder.topic;
         this.mProducerClientId = builder.producerClientId;
+        mqttSend = new MqttSend(mBroker, mAccessKey, mSecretKey);
     }
 
     private Handler handler = new Handler() {
@@ -82,7 +83,6 @@ public class LocationUtils {
                 e.printStackTrace();
             }
 
-            MqttSend mqttSend = new MqttSend(mBroker, mAccessKey, mSecretKey);
             mqttSend.sendMessage(mTopic, mProducerClientId, detailJson.toString());
 
         }
@@ -122,7 +122,7 @@ public class LocationUtils {
         if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-        mLocationManager.requestLocationUpdates(mProvider, 3000, 0, locationListener);
+        mLocationManager.requestLocationUpdates(mProvider, 5000, 0, locationListener);
     }
 
     public void stopLocationService() {

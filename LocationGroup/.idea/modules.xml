@@ -3,10 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LocationGroup.iml" filepath="$PROJECT_DIR$/LocationGroup.iml" />
-      <module fileurl="file://$PROJECT_DIR$/LocationGroup.iml" filepath="$PROJECT_DIR$/LocationGroup.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/locationlibrary/locationlibrary.iml" filepath="$PROJECT_DIR$/locationlibrary/locationlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/locationlibrary/locationlibrary.iml" filepath="$PROJECT_DIR$/locationlibrary/locationlibrary.iml" />
     </modules>
   </component>
