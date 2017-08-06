@@ -122,7 +122,7 @@ public class LocationUtils {
         if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-        mLocationManager.requestLocationUpdates(mProvider, 2000, 5, locationListener);
+        mLocationManager.requestLocationUpdates(mProvider, 3000, 0, locationListener);
     }
 
     public void stopLocationService() {
