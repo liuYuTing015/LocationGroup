@@ -11,10 +11,6 @@ import java.util.TimeZone;
 public class TimeUtils {
     public final static SimpleDateFormat TIME_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
-    static {
-        TIME_FORMAT.setTimeZone(TimeZone.getTimeZone("GMT+8"));
-    }
-
     public static String parseDate(long time) {
         Date date = new Date(time);
         String timeString = TIME_FORMAT.format(date);

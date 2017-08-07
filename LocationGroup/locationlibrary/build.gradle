@@ -30,7 +30,7 @@ uploadArchives {
         pom.project {
             groupId "com.location"
             artifactId "group"
-            version 1.2
+            version 1.3
         }
     }
 }
